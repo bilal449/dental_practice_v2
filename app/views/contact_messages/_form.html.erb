@@ -1,0 +1,45 @@
+<section class="panel">
+    <header class="panel-heading">
+      Contact Messages
+    </header>
+      
+    <div class="panel-body table-responsive">
+
+
+
+      <%= form_for(@contact_message) do |f| %>
+        <% if @contact_message.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@contact_message.errors.count, "error") %> prohibited this contact_message from being saved:</h2>
+
+            <ul>
+            <% @contact_message.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone_no %><br>
+          <%= f.text_field :phone_no, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email %><br>
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :message %><br>
+          <%= f.text_field :message, class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+
+    </div>
+</section>      

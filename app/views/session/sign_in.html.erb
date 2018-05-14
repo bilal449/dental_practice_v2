@@ -1,0 +1,47 @@
+<div class="login-wrapper">
+
+  <%= form_tag("/sign_in_post", method: "post", class: "form-signin") do |form| %>
+
+    
+     <br>
+      <% flash.each do |name, msg| %>
+        <% if msg.class == Array %>
+          <% msg.each do |message| %>
+            <%= content_tag :div, message, :id => "flash_#{name}" %>
+          <% end %>
+        <% else %>
+
+    
+         <%= content_tag :div, msg, :id => "flash_#{name}", :style=>'color:red' %>
+
+          <% end %> 
+      <% end %>
+
+        
+      <h1><img src="/assets/dental.jpg" alt="Dental Practice System" /></h1>
+      
+      <h2 class="form-signin-heading">Please login</h2>
+
+
+    <div class="form-group">
+      <%= label_tag :username %>
+      <%= text_field_tag :username, nil, class: 'form-control', required: 'true' %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, class: 'form-control', required: 'true' %>
+    </div>
+
+    
+    <div class="actions">
+      <%= submit_tag "Sign In", :class=>'btn btn-lg btn-blue btn-block' %>
+    </div>
+
+    
+  <% end %>
+
+
+	
+
+</div>

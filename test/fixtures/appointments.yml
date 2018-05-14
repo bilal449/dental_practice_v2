@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timeanddate: 2018-05-13 23:34:44
+  dentist_id: 
+  patient_id: 
+  appointment_length: 1
+  fee_paid: 9.99
+  notes: MyString
+
+two:
+  timeanddate: 2018-05-13 23:34:44
+  dentist_id: 
+  patient_id: 
+  appointment_length: 1
+  fee_paid: 9.99
+  notes: MyString

@@ -1,0 +1,37 @@
+
+<section class="panel">
+        <header class="panel-heading">
+                Add New Lecturer
+        </header>
+        <div class="panel-body table-responsive">
+            <%= form_for(:lecturer,:url=>{:action=>'create'}) do |f| %>
+                <div class="form-group">
+                    <%= f.label :first_name %>
+                    <%= f.text_field :first_name, class: 'form-control', placeholder: "Enter First Name Here" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :last_name %>
+                    <%= f.text_field :last_name, class: 'form-control', placeholder: "Enter Last Name Here" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :username %>
+                    <%= f.text_field :username, class: 'form-control', placeholder: "Enter username Here" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :password %>
+                    <%= f.text_field :password, class: 'form-control', placeholder: "Enter Password Here" %>
+                </div>
+
+                
+                <div class="form-group">
+                    <%= f.label :contact_no %>
+                     <%= f.text_field :contact_no, class: 'form-control', placeholder: "Enter Contact No Here" %>
+                </div>
+               
+                <%= f.submit "Save", class: 'button' %>
+            <% end %>
+        </div>
+</section>

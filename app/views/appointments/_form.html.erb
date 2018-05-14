@@ -1,0 +1,56 @@
+<section class="panel">
+    <header class="panel-heading">
+      Appointments
+    </header>
+      
+    <div class="panel-body table-responsive">
+
+
+<%= form_for(@appointment) do |f| %>
+  <% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+      <% @appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :timeanddate %><br>
+    <%= f.datetime_select :timeanddate %>
+  </div>
+
+  
+  <div class="form-group">
+    <%= f.label :dentist_id %><br>
+    <%= f.collection_select :dentist_id, Dentist.order(:name),:id,:name, include_blank: true %>
+    
+  </div>
+  <div class="form-group">
+    <%= f.label :patient_id %><br>
+    <%= f.collection_select :patient_id, Patient.order(:name),:id,:name, include_blank: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :appointment_length %><br>
+    <%= f.number_field :appointment_length, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fee_paid %><br>
+    <%= f.text_field :fee_paid, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+ </div>
+</section>

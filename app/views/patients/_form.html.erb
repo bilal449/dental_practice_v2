@@ -1,0 +1,49 @@
+<section class="panel">
+    <header class="panel-heading">
+      Patient
+    </header>
+      
+    <div class="panel-body table-responsive">
+
+
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_no %><br>
+    <%= f.text_field :phone_no, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :allergies %><br>
+    <%= f.text_field :allergies, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :medical_notes %><br>
+    <%= f.text_field :medical_notes, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+</div>
+</section>
